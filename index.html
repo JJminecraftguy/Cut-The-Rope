@@ -31,37 +31,39 @@
         <link href="css/nojavascript.css?438" rel="stylesheet" type="text/css">
     </noscript>
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-}
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
 
-#gameContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black; /* Optional: set a background color */
-}
+    #gameContainer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black; /* Optional: set a background color */
+    }
 
-#gameArea {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    #gameArea {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
+    canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+</style>
 	
 </head>
 <body class="ctrCursor">
@@ -241,6 +243,19 @@ canvas {
     </div>
 
   </div>
+
+<script>
+    function resizeGame() {
+        const canvas = document.getElementById("c");
+        if (canvas) {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+    }
+
+    window.addEventListener("resize", resizeGame);
+    window.addEventListener("load", resizeGame);
+</script>
 
 
 </body>
