@@ -61,8 +61,11 @@ html, body {
 }
 
 canvas {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: block;
 }
 </style>
@@ -248,17 +251,16 @@ canvas {
 
 <script>
 function resizeGame() {
-    const gameContainer = document.getElementById("gameContainer");
     const canvas = document.getElementById("c");
 
-    if (gameContainer) {
-        gameContainer.style.width = window.innerWidth + "px";
-        gameContainer.style.height = window.innerHeight + "px";
-    }
-
     if (canvas) {
+        // Set rendering resolution
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
+        // Ensure it visually fills the screen
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
     }
 }
 
