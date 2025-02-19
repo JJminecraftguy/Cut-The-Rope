@@ -64,8 +64,6 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     display: block;
 }
 </style>
@@ -254,11 +252,9 @@ function resizeGame() {
     const canvas = document.getElementById("c");
 
     if (canvas) {
-        // Set rendering resolution
+        console.log("Resizing canvas to:", window.innerWidth, window.innerHeight); // Debugging line
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-
-        // Ensure it visually fills the screen
         canvas.style.width = window.innerWidth + "px";
         canvas.style.height = window.innerHeight + "px";
     }
